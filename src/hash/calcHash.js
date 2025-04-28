@@ -2,10 +2,10 @@ import { createReadStream } from 'node:fs';
 const { createHash } = await import('node:crypto');
 
 const calculateHash = async () => {
-    const filename = './files/fileToCalculateHashFor.txt';
+    const fileName = './files/fileToCalculateHashFor.txt';
     const hash = createHash('sha256');
 
-    const input = createReadStream(filename);
+    const input = createReadStream(fileName);
     input.on('readable', () => {
         const data = input.read();
 
